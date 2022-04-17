@@ -3,7 +3,7 @@ kind: ServiceAccount
 metadata:
   name: test
 
-----
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
