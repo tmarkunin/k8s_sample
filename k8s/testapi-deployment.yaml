@@ -51,7 +51,7 @@ spec:
             memory: "128Mi"
             cpu: "200m" 
         image: tmarkunin/testapi:2.1
-        command: [/bin/bash, -c, "source /vault/secrets/config && npm start"]
+        command: [/bin/bash, -c, "source /vault/secrets/config && printenv && npm start"]
         args:
           - "monitor=true"
         imagePullPolicy: Always
