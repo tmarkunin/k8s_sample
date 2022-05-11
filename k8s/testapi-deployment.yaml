@@ -57,3 +57,15 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
+        livenessProbe:
+          httpGet:
+            path: /testapi/healthz
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /testapi/users
+            port: 3000
+          initialDelaySeconds: 15
+          periodSeconds: 5
