@@ -21,7 +21,7 @@ spec:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/path: /metrics
+        prometheus.io/path: /testapi/metrics
         prometheus.io/port: "3000"
         vault.hashicorp.com/agent-inject: 'true'
         vault.hashicorp.com/agent-inject-status: 'update'
@@ -50,7 +50,7 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "200m" 
-        image: tmarkunin/testapi:2.1
+        image: tmarkunin/testapi:2.2
         command: [/bin/bash, -c, "source /vault/secrets/config && printenv && npm start"]
         args:
           - "monitor=true"
@@ -59,13 +59,13 @@ spec:
         - containerPort: 3000
         livenessProbe:
           httpGet:
-            path: /healthz
+            path: /teatapi/healthz
             port: 3000
           initialDelaySeconds: 10
           periodSeconds: 5
         readinessProbe:
           httpGet:
-            path: /users
+            path: /testapi/users
             port: 3000
           initialDelaySeconds: 15
           periodSeconds: 5
