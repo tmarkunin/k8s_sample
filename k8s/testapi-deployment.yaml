@@ -50,7 +50,7 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "200m" 
-        image: tmarkunin/testapi:2.2
+        image: tmarkunin/testapi:2.1
         command: [/bin/bash, -c, "source /vault/secrets/config && printenv && npm start"]
         args:
           - "monitor=true"
@@ -59,13 +59,13 @@ spec:
         - containerPort: 3000
         livenessProbe:
           httpGet:
-            path: http://localhost:3000/testapi/healthz
+            path: /healthz
             port: 3000
           initialDelaySeconds: 10
           periodSeconds: 5
         readinessProbe:
           httpGet:
-            path: /testapi/users
+            path: /users
             port: 3000
           initialDelaySeconds: 15
           periodSeconds: 5
