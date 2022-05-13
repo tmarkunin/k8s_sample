@@ -12,7 +12,7 @@ metadata:
     app: testapi
     version: v2
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: testapi
