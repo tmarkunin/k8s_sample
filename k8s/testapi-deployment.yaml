@@ -59,13 +59,13 @@ spec:
         - containerPort: 3000
         livenessProbe:
           httpGet:
-            path: /healthz
+            path: /testapi/healthz
             port: 3000
           initialDelaySeconds: 10
           periodSeconds: 5
         readinessProbe:
           httpGet:
-            path: /users
+            path: /testapi/users
             port: 3000
           initialDelaySeconds: 15
           periodSeconds: 5
