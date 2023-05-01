@@ -12,7 +12,7 @@ metadata:
     app: testapi
     version: v2
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: testapi
@@ -50,7 +50,7 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "200m" 
-        image: tmarkunin/testapi:2.2
+        image: tmarkunin/testapi:2.0
         command: [/bin/bash, -c, "source /vault/secrets/config && printenv && npm start"]
         args:
           - "monitor=true"
