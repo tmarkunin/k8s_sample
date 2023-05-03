@@ -45,11 +45,11 @@ spec:
       - name: testapi
         resources:
           requests:
-            memory: "128Mi"
-            cpu: "200m"
+            memory: "512Mi"
+            cpu: "250m"
           limits:
-            memory: "256Mi"
-            cpu: "500m" 
+            memory: "512Mi"
+            cpu: "250m" 
         image: tmarkunin/testapi:2.2
         command: [/bin/bash, -c, "source /vault/secrets/config && printenv && npm start"]
         args:
