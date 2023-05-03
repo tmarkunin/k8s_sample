@@ -21,11 +21,11 @@ spec:
       - name: mysql
         resources:
           requests:
-            memory: "128Mi"
-            cpu: "200m"
+            memory: "512Mi"
+            cpu: "250m"
           limits:
-            memory: "256Mi"
-            cpu: "500m"
+            memory: "512Mi"
+            cpu: "250m"
         image: tmarkunin/maria:2.0
         imagePullPolicy: Always
         ports:
